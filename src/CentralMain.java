@@ -14,7 +14,7 @@ public class CentralMain {
             int option = scanner.nextInt(); scanner.nextLine(); // Limpiar el buffer
 
             switch (option) {
-                case 1: // Cifrar texto
+                case 1: 
                     System.out.print("Ingrese el texto a cifrar: ");
                     String inputText = scanner.nextLine();
                     System.out.print("Ingrese el nombre del archivo: ");
@@ -32,7 +32,7 @@ public class CentralMain {
                     }
                     break;
 
-                case 2: // Desencriptar archivo
+                case 2: 
                     System.out.print("Ingrese el nombre del archivo a desencriptar: ");
                     String fileToDecrypt = scanner.nextLine();
                     if (validator.validateFile(fileToDecrypt)) {
@@ -49,17 +49,17 @@ public class CentralMain {
                     }
                     break;
 
-                case 3: // Análisis estadístico
+                case 3: 
                     System.out.print("Ingrese el texto para análisis: ");
                     statisticalAnalyzer.displayFrequency(statisticalAnalyzer.analyzeFrequency(scanner.nextLine()));
                     break;
 
-                case 4: // Fuerza bruta
+                case 4: 
                     System.out.print("Ingrese el texto cifrado: ");
                     bruteForce.crack(scanner.nextLine());
                     break;
 
-                case 5: // Salir
+                case 5: 
                     System.out.println("Saliendo del programa. ¡Hasta luego!");
                     scanner.close();
                     return;
