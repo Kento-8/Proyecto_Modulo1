@@ -13,16 +13,16 @@ public class Cipher {
         for (char character : text.toCharArray()) {
             if (Character.isLetter(character)) {
                 char base = Character.isLowerCase(character) ? 'a' : 'A';
-                // Cifrar el carácter
+                
                 encryptedText.append((char) ((character - base + shift) % 26 + base));
             } else {
-                encryptedText.append(character); // No cambiar caracteres no alfabéticos
+                encryptedText.append(character); 
             }
         }
         return encryptedText.toString();
     }
 
-    // Método para descifrar el texto
+    
     public String decrypt(String text, int shift) throws KeyInvalidException {
         if (shift < 0) throw new KeyInvalidException("El desplazamiento no puede ser negativo.");
         StringBuilder decryptedText = new StringBuilder();
@@ -30,10 +30,10 @@ public class Cipher {
         for (char character : text.toCharArray()) {
             if (Character.isLetter(character)) {
                 char base = Character.isLowerCase(character) ? 'a' : 'A';
-                // Des cifrar el carácter
+                
                 decryptedText.append((char) ((character - base - shift + 26) % 26 + base));
             } else {
-                decryptedText.append(character); // No cambiar caracteres no alfabéticos
+                decryptedText.append(character); 
             }
         }
         return decryptedText.toString();
